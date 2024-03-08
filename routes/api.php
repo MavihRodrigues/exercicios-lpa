@@ -13,4 +13,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 route::get('nome', function(Request $request){ 
     $nome = $request->input('nome'); 
     return $nome;
+});
+
+
+route::get('nome/idade', function(Request $request){ 
+    $nome = $request->input('nome'); 
+    $idade = $request->input('idade'); 
+    return 'Meu nome é '. $nome .', tenho '. $idade .' anos'; 
 }); 
