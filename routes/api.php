@@ -75,3 +75,11 @@ route::get('media', function (Request $request){
 });
 
 
+route::get('divisao', function (Request $request){ 
+    $numero1 = $request->input('numero1'); 
+    $numero2 = $request->input('numero2'); 
+    $divisao = $numero2 / $numero1; 
+    return $divisao; 
+});
+
+
