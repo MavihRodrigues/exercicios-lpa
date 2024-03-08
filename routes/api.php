@@ -46,3 +46,11 @@ route::get('subtracao', function (Request $request){
     $subtracao = $numero1 - $numero2 - $numero3; 
     return $subtracao; 
 }); 
+
+
+route::get('divisao', function (Request $request){ 
+    $numero1 = $request->input('numero1'); 
+    $numero2 = $request->input('numero2'); 
+    $divisao = $numero1 / $numero2; 
+    return $divisao;
+});
