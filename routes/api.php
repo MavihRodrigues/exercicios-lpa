@@ -37,3 +37,12 @@ route::get('soma', function (Request $request){
     $soma = $numero1 + $numero2; 
     return $soma; 
 });
+
+
+route::get('subtracao', function (Request $request){
+    $numero1 = $request->input('numero1'); 
+    $numero2 = $request->input('numero2'); 
+    $numero3 = $request->input('numero3'); 
+    $subtracao = $numero1 - $numero2 - $numero3; 
+    return $subtracao; 
+}); 
