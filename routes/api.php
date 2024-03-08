@@ -112,3 +112,11 @@ route::get('porcentagem', function (Request $request){
     $resultado = ($salarioAtual * $aumentoPercentual)/100; 
     return 'O salário anterior era de '. $salarioAtual .', o aumento percentual foi de:'. $aumentoPercentual .', logo o resultado é:'. $resultado; 
    }); 
+
+
+   route::get('pontosDeRecompensa', function (Request $request){ 
+    $valorDaCompra = $request->input('valorDaCompra'); 
+    $pontosDeRecompensa = $request->input('pontosDeRecompensa'); 
+    $resultado = ($valorDaCompra * 1)/ $pontosDeRecompensa; 
+    return $resultado; 
+   }); 
