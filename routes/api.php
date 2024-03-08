@@ -54,3 +54,11 @@ route::get('divisao', function (Request $request){
     $divisao = $numero1 / $numero2; 
     return $divisao;
 });
+
+
+route::get('multiplicacao', function (Request $request){ 
+    $numero1 = $request->input('numero1'); 
+    $numero2 = $request->input('numero2'); 
+    $multiplicacao = $numero1 * $numero2; 
+    return $multiplicacao; 
+}); 
