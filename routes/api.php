@@ -62,3 +62,16 @@ route::get('multiplicacao', function (Request $request){
     $multiplicacao = $numero1 * $numero2; 
     return $multiplicacao; 
 }); 
+
+
+route::get('media', function (Request $request){ 
+    $nota1 = $request->input('nota1'); 
+    $nota2 = $request->input('nota2'); 
+    $nota3 = $request->input('nota3'); 
+    $nota4 = $request->input('nota4'); 
+    $nota5 = $request->input('nota5'); 
+    $media = ($nota1 + $nota2 + $nota3 + $nota4 + $nota5)/5; 
+    return $media; 
+});
+
+
