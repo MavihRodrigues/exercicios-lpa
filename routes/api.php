@@ -104,3 +104,11 @@ route::get('porcentagem', function (Request $request){
     $resultado = $preço - ($preço * $porcentagem / 100); 
     return $resultado; 
    });
+
+
+   route::get('aumentoSalarial', function (Request $request){ 
+    $salarioAtual = $request->input('salario'); 
+    $aumentoPercentual = $request->input('porcentagem'); 
+    $resultado = ($salarioAtual * $aumentoPercentual)/100; 
+    return 'O salário anterior era de '. $salarioAtual .', o aumento percentual foi de:'. $aumentoPercentual .', logo o resultado é:'. $resultado; 
+   }); 
