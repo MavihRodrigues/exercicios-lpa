@@ -90,3 +90,9 @@ route::get('multiplicacao', function (Request $request){
 }); 
 
 
+route::get('calcular', function (Request $request){ 
+    $base = $request->input('base'); 
+    $altura = $request->input('altura'); 
+    $calcular = $base * $altura; 
+    return $calcular; 
+}); 
