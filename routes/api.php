@@ -95,4 +95,12 @@ route::get('calcular', function (Request $request){
     $altura = $request->input('altura'); 
     $calcular = $base * $altura; 
     return $calcular; 
-}); 
+});
+
+
+route::get('porcentagem', function (Request $request){ 
+    $preço = $request->input('preço'); 
+    $porcentagem = $request->input('porcentagem'); 
+    $resultado = $preço - ($preço * $porcentagem / 100); 
+    return $resultado; 
+   });
