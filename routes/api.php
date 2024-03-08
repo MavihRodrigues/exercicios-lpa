@@ -83,3 +83,10 @@ route::get('divisao', function (Request $request){
 });
 
 
+route::get('multiplicacao', function (Request $request){ 
+    $numero1 = $request->input('numero1'); 
+    $multiplicacao = $numero1 * 2; 
+    return 'O dobro do número informado é igual a: '. $multiplicacao; 
+}); 
+
+
