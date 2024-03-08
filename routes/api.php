@@ -120,3 +120,10 @@ route::get('porcentagem', function (Request $request){
     $resultado = ($valorDaCompra * 1)/ $pontosDeRecompensa; 
     return $resultado; 
    }); 
+
+
+   route::get('Venda', function (Request $request){ 
+    $valorTotalDasCompras = $request->input('valorTotalDasCompras'); 
+    $resultado = ($valorTotalDasCompras *5)/100; 
+    return $resultado; 
+}); 
