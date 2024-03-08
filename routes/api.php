@@ -29,3 +29,11 @@ route::get('nome/anoDeNascimento/cidadeNatal',function(Request$request){
     $cidadeNatal = $request->input('cidadeNatal'); 
     return 'Meu nome '. $nome .', nasci em '. $anoDeNascimento .' e a minha cidade natal é '. $cidadeNatal; 
 });
+
+
+route::get('soma', function (Request $request){ 
+    $numero1 = $request->input('numero1'); 
+    $numero2 = $request->input('numero2'); 
+    $soma = $numero1 + $numero2; 
+    return $soma; 
+});
