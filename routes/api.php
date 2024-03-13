@@ -10,28 +10,28 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-route::get('nome', function(Request $request){ 
+Route::get('nome', function(Request $request){ 
     $nome = $request->input('nome'); 
     return $nome;
 });
 
 
-route::get('nome/idade', function(Request $request){ 
+Route::get('nome/idade', function(Request $request){ 
     $nome = $request->input('nome'); 
     $idade = $request->input('idade'); 
     return 'Meu nome é '. $nome .', tenho '. $idade .' anos'; 
 });
 
 
-route::get('nome/anoDeNascimento/cidadeNatal',function(Request$request){ 
+Route::get('nome/anoDeNascimento/cidadeNatal',function(Request$request){ 
     $nome = $request->input('nome'); 
     $anoDeNascimento = $request->input('anoDeNascimento'); 
     $cidadeNatal = $request->input('cidadeNatal'); 
-    return 'Meu nome '. $nome .', nasci em '. $anoDeNascimento .' e a minha cidade natal é '. $cidadeNatal; 
+    return 'Meu nome é '. $nome .', nasci em '. $anoDeNascimento .' e a minha cidade natal é '. $cidadeNatal; 
 });
 
 
-route::get('soma', function (Request $request){ 
+Route::get('soma', function (Request $request){ 
     $numero1 = $request->input('numero1'); 
     $numero2 = $request->input('numero2'); 
     $soma = $numero1 + $numero2; 
@@ -39,7 +39,7 @@ route::get('soma', function (Request $request){
 });
 
 
-route::get('subtracao', function (Request $request){
+Route::get('subtracao', function (Request $request){
     $numero1 = $request->input('numero1'); 
     $numero2 = $request->input('numero2'); 
     $numero3 = $request->input('numero3'); 
@@ -48,7 +48,7 @@ route::get('subtracao', function (Request $request){
 }); 
 
 
-route::get('divisao', function (Request $request){ 
+Route::get('divisao', function (Request $request){ 
     $numero1 = $request->input('numero1'); 
     $numero2 = $request->input('numero2'); 
     $divisao = $numero1 / $numero2; 
@@ -56,15 +56,15 @@ route::get('divisao', function (Request $request){
 });
 
 
-route::get('multiplicacao', function (Request $request){ 
+Route::get('multiplicar', function (Request $request){ 
     $numero1 = $request->input('numero1'); 
     $numero2 = $request->input('numero2'); 
     $multiplicacao = $numero1 * $numero2; 
-    return $multiplicacao; 
+    return $multiplicacao;
 }); 
 
 
-route::get('media', function (Request $request){ 
+Route::get('media', function (Request $request){ 
     $nota1 = $request->input('nota1'); 
     $nota2 = $request->input('nota2'); 
     $nota3 = $request->input('nota3'); 
@@ -75,7 +75,7 @@ route::get('media', function (Request $request){
 });
 
 
-route::get('divisao', function (Request $request){ 
+Route::get('divisao', function (Request $request){ 
     $numero1 = $request->input('numero1'); 
     $numero2 = $request->input('numero2'); 
     $divisao = $numero2 / $numero1; 
@@ -83,14 +83,14 @@ route::get('divisao', function (Request $request){
 });
 
 
-route::get('multiplicacao', function (Request $request){ 
+Route::get('multiplicacao', function (Request $request){ 
     $numero1 = $request->input('numero1'); 
     $multiplicacao = $numero1 * 2; 
     return 'O dobro do número informado é igual a: '. $multiplicacao; 
 }); 
 
 
-route::get('calcular', function (Request $request){ 
+Route::get('calcular', function (Request $request){ 
     $base = $request->input('base'); 
     $altura = $request->input('altura'); 
     $calcular = $base * $altura; 
@@ -98,7 +98,7 @@ route::get('calcular', function (Request $request){
 });
 
 
-route::get('porcentagem', function (Request $request){ 
+Route::get('porcentagem', function (Request $request){ 
     $preço = $request->input('preço'); 
     $porcentagem = $request->input('porcentagem'); 
     $resultado = $preço - ($preço * $porcentagem / 100); 
@@ -106,15 +106,16 @@ route::get('porcentagem', function (Request $request){
    });
 
 
-   route::get('aumentoSalarial', function (Request $request){ 
-    $salarioAtual = $request->input('salario'); 
-    $aumentoPercentual = $request->input('porcentagem'); 
-    $resultado = ($salarioAtual * $aumentoPercentual)/100; 
-    return 'O salário anterior era de '. $salarioAtual .', o aumento percentual foi de:'. $aumentoPercentual .', logo o resultado é:'. $resultado; 
-   }); 
+   Route::get('aumentoSalarial', function (Request $request){ 
+    $salarioAnterior = $request->input('salarioAnterior'); 
+    $porcentualAumento = $request->input('porcentualAumento'); 
+    $aumento = ($porcentualAumento / 100) *$salarioAnterior;
+    $salarioAtual = $salarioAnterior + $aumento;
+    return 'O salário anterior era de '. $salarioAnterior .', o aumento percentual foi de:'. $porcentualAumento .', logo o resultado é:'. $salarioAtual; 
+   });
 
 
-   route::get('pontosDeRecompensa', function (Request $request){ 
+   Route::get('pontosDeRecompensa', function (Request $request){ 
     $valorDaCompra = $request->input('valorDaCompra'); 
     $pontosDeRecompensa = $request->input('pontosDeRecompensa'); 
     $resultado = ($valorDaCompra * 1)/ $pontosDeRecompensa; 
@@ -122,8 +123,8 @@ route::get('porcentagem', function (Request $request){
    }); 
 
 
-   route::get('Venda', function (Request $request){ 
+   Route::get('Venda', function (Request $request){ 
     $valorTotalDasCompras = $request->input('valorTotalDasCompras'); 
     $resultado = ($valorTotalDasCompras *5)/100; 
     return $resultado; 
-}); 
+});
