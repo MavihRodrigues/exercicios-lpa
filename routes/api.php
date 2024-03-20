@@ -128,3 +128,53 @@ Route::get('porcentagem', function (Request $request){
     $resultado = ($valorTotalDasCompras *5)/100; 
     return $resultado; 
 });
+
+
+
+Route::get('verifica/idade', function(Request $request){
+    $idade = $request->input('idade');
+    if($idade >= 18){
+        return "maior de idade";
+    } else {
+        return "menor de idade";
+    }
+});
+
+
+Route::get('verificar/par', function(Request $request){
+    $numero = $request->input('numero');
+    if($numero % 2 == 0){
+        return 'par';
+    } else {
+        return 'impar';
+    }
+});
+
+
+Route::get('verifica/numero', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero > 10){
+    return "maior que 10";
+    } else {
+    return "menor que 10";
+    }
+});
+
+
+Route::get('temperatura/celsius', function (Request $request){
+    $graus = $request->input('graus');
+    if($graus > 30){
+    return "Está quente!";
+    }
+});
+
+Route::get('negativo/positivo/zero', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero > 0){
+    return "Este número é positivo";
+    } elseif ($numero < 0){
+    return "Este número é negativo";
+    } else {
+    return "Este número é nulo";
+    }
+});
