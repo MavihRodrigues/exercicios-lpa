@@ -178,3 +178,132 @@ Route::get('negativo/positivo/zero', function (Request $request){
     return "Este número é nulo";
     }
 });
+
+
+Route::get('idade', function (Request $request){
+    $idade = $request->input('idade');
+    if($idade >= 18){
+    return "Você é maior de idade";
+    }
+});
+
+
+Route::get('par/impar', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero % 2 == 0){
+    return "Este número é par";
+    } else {
+    return "Este número é ímpar";
+    }
+});
+
+
+Route::get('maiorNumero', function (Request $request){
+    $numero1 = $request->input('numeroUm');
+    $numero2 = $request->input('numeroDois');
+    if($numero1 > $numero2){
+    return "O maior número é $numero1";
+    } elseif ($numero2 > $numero1){
+    return "O maior número é $numero2";
+    }
+});
+
+
+Route::get('verificar/divisivelPor9', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero % 9 == 0 ){
+    return "$numero é divisível por 9 :)";
+    } else {
+    return "$numero não é divisível por 9 :(";
+    }
+});
+
+
+Route::get('verificar/multiploDe7', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero % 7 === 0){
+    return "$numero é múltiplo de 7 :)";
+    } else {
+    return "$numero não é múltiplo de 7 :(";
+    }
+});
+
+
+Route::get('verificar/idade', function (Request $request){
+    $idade = $request->input('idade');
+    if($idade < 12){
+    return "Você é uma criança";
+    }
+});
+
+
+Route::get('maior/menor/igual', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero > 100){
+    return "$numero é maior que 100";
+    } elseif ($numero < 100){
+    return "$numero é menor que 100";
+    } else {
+    return "$numero é igual a 100";
+    }
+});
+
+
+Route::get('verificar/divisivelPor6', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero % 6 == 0 ){
+    return "$numero é divisível por 6 :)";
+    } else {
+    return "$numero não é divisível por 6 :(";
+    }
+});
+
+
+Route::get('verificar/nome', function (Request $request){
+    $nome = $request->input('nome');
+    if($nome = "Alice"){
+    return "Olá $nome!";
+    }
+});
+
+
+Route::get('verificar/dirigir', function (Request $request){
+    $idade = $request->input('idade');
+    if($idade >= 18){
+    return "Você possui carteira de motorista?";
+    }
+});
+
+
+Route::get('verificarMenorNumero', function (Request $request){
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    if($numero1 < $numero2){
+    return "O menor número é $numero1";
+    } elseif ($numero2 < $numero1){
+    return "O menor número é $numero2";
+    }
+});
+
+
+Route::get('verificar/idadeMaiorDe18', function (Request $request){
+    $nome = $request->input('nome');
+    $idade = $request->input('idade');
+    if($idade >= 18){
+    return "Você é maior de idade, $nome!";
+    }
+});
+
+
+Route::get('divisaoDoPrimeiroPeloSegundo', function (Request $request){
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    if($numero1 = 0){
+    return "não é possível efetuar a divisão pois o primeiro número é zero";
+    } elseif ($numero2 = 0){
+    return "não é possível efetuar a divisão pois o segundo número é zero";
+    } else {
+    $efetuação = $numero1 / $numero2;
+    return "O resultado é $efetuação";
+    }
+});
