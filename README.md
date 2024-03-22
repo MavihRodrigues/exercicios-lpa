@@ -20,7 +20,7 @@ git clone https://github.com/MavihRodrigues/exercicios-lpa.git
 ```
 2. Acesse o diretório do projeto:
 ```
-cd ecercicios-lpa
+cd exercicios-lpa
 ```
 3. Iniciando o projeto
 ```
