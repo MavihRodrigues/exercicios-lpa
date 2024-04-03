@@ -346,3 +346,26 @@ Route::get('positivo/impar', function (Request $request){
 });
 
 
+Route::get('calcularMedia', function (Request $request){
+    $nota1 = $request->input('nota1');
+    $nota2 = $request->input('nota2');
+    $nota3 = $request->input('nota3');
+    $média = $nota1 + $nota2 + $nota3 / 3;
+    return "O aluno foi aprovado com $média na média";
+});
+
+
+Route::get('anoBissexto', function (Request $request){
+    $ano = $request->input('ano');
+    if($ano % 4 == 0){
+    return "$ano é um ano bissexto";
+    }else {
+    return "$ano não é um ano bissexto";
+    }
+});
+
+
+Route::get('descontoDe15', function (Request $request){
+    $preco = $request->input('preco');
+    
+});
