@@ -269,8 +269,13 @@ Route::get('verificar/nome', function (Request $request){
 
 Route::get('verificar/dirigir', function (Request $request){
     $idade = $request->input('idade');
+    $carteira = $request->input('carteira');
     if($idade >= 18){
-    return "Você possui carteira de motorista?";
+    if($carteira == "sim"){
+    return "Você pode dirigir!";
+    }
+ } else { 
+    return "Você não pode dirigir";
     }
 });
 
@@ -339,3 +344,5 @@ Route::get('positivo/impar', function (Request $request){
     return "Este número é ímpar e positivo";
     }
 });
+
+
