@@ -298,12 +298,44 @@ Route::get('verificar/idadeMaiorDe18', function (Request $request){
 Route::get('divisaoDoPrimeiroPeloSegundo', function (Request $request){
     $numero1 = $request->input('numero1');
     $numero2 = $request->input('numero2');
-    if($numero1 = 0){
+    if($numero1 == 0){
     return "não é possível efetuar a divisão pois o primeiro número é zero";
-    } elseif ($numero2 = 0){
+    } else if ($numero2 == 0){
     return "não é possível efetuar a divisão pois o segundo número é zero";
     } else {
-    $efetuação = $numero1 / $numero2;
-    return "O resultado é $efetuação";
+    $resultado = $numero1 / $numero2;
+    return "O resultado é $resultado";
+    }
+});
+
+
+Route::get('verificar/maiorQue100', function (Request $request){
+    $primeiroNumero = $request->input('numero1');
+    $segundoNumero = $request->input('numero2');
+    $multiplicacao = $primeiroNumero * $segundoNumero;
+    if($multiplicacao > 100){
+    return "O resultado da multiplicação $multiplicacao é maior que 100";
+    }
+});
+
+
+Route::get('verificarSoma', function (Request $request){
+    $numeroUm = $request->input('numero1');
+    $numeroDois = $request->input('numero2');
+    $soma = $numeroUm + $numeroDois;
+    if($soma % 2 == 0){
+    return $multiplicar = $numeroUm * $numeroDois;
+    } else {
+    $dividir = $numeroUm / $numeroDois;
+    return $dividir;
+    }
+});
+
+
+Route::get('positivo/impar', function (Request $request){
+    $numero = $request->input('numero');
+    if($numero % 2 > 0)
+    if($numero > 0){
+    return "Este número é ímpar e positivo";
     }
 });
